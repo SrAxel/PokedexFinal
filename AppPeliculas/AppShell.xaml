@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppPeliculas.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AppPeliculas.Views"
+    xmlns:local="clr-namespace:AppPeliculas"
+    FlyoutBackgroundImage="fondo.png"
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    BackgroundColor="DarkBlue"
+    >
+
+    <Shell.FlyoutHeader>
+        <views:EncabezadoMenu/>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <views:PiePaginaMenu/>
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Route="nuestra_app"
+                FlyoutDisplayOptions="AsMultipleItems"
+                >
+
+        <ShellContent 
+            Title="Inicio"
+            ContentTemplate="{DataTemplate views:InicioApp}"
+            Route="indice"
+            />
+        <ShellContent
+            Title="Agregar Pokemon"
+            ContentTemplate="{DataTemplate views:AgregarPelicula}"
+            Route="agregar_pelicula" />
+    </FlyoutItem>
+    <MenuItem Text="Cerrar sesión"
+              IconImageSource="exit.png"
+              Clicked="MenuItem_Clicked"
+              />
+
+</Shell>

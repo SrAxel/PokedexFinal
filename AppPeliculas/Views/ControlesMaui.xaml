@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPeliculas.Views.ControlesMaui"
+             Title="ControlesMaui">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+                Text="Controles MAUI"
+                Style="{StaticResource TituloPagina}" />
+            <Label Text="Probamos el control Entry"/>
+            <Entry x:Name="txtNombre" 
+                   Placeholder="Ingrese su nombre" 
+                   Style="{StaticResource EstiloMiEntry}"></Entry>
+            <Entry x:Name="txtApellido" 
+                   Placeholder="Ingrese su apellido" 
+                   Style="{StaticResource EstiloMiEntry}"></Entry>
+            <Label Text="Probamos el control Timepicker"/>
+            <TimePicker x:Name="HoraTimePicker" HorizontalOptions="Center"></TimePicker>
+            <Label Text="Probamos el control Datepicker"/>
+            <DatePicker x:Name="FechaDatePicker" HorizontalOptions="Center"></DatePicker>
+            <Label Text="Probamos el control Checkbox"/>
+            <CheckBox x:Name="CasadoCheckbox"  HorizontalOptions="Center"></CheckBox>
+            <Label Text="Probamos el control Slider" />
+            <Slider x:Name="AlturaSlider" Maximum="360" ></Slider>
+            <Label Text="{Binding Path=Value}" 
+                BindingContext="{x:Reference AlturaSlider}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>  
+            <Label Text="Probamos el control Switch"/>
+            <Switch x:Name="ArgentinoSwitch" HorizontalOptions="Center" ></Switch>
+            <Label Text="ROTACIÓN" 
+                BindingContext="{x:Reference AlturaSlider}"
+                Rotation="{Binding Path=Value}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            
+            <Label Text="Probamos el control Picker"/>
+            <Picker x:Name="LocalidadesPicker" ></Picker>
+            <Label Text="{Binding Path=SelectedItem}" BindingContext="{x:Reference LocalidadesPicker}"/>
+
+            <Label Text="Probamos el control Webview"/>
+            <WebView Source="http://sanjusto.gov.ar/" HeightRequest="400"></WebView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPeliculas.Views.InicioApp"
+             BackgroundColor="Orange"
+             >
+
+    <VerticalStackLayout Spacing="20" Margin="30,10,30,10">
+        <Image Source="https://i.ibb.co/VtTfvjD/pngimg-com-pokemon-logo-PNG3.png"
+       VerticalOptions="Start"
+       HorizontalOptions="CenterAndExpand"
+       Margin="0,0,0,20"
+               HeightRequest="100"
+       ></Image>
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*">
+
+            <Button
+            Text="Agregar"
+            TextColor="White"
+            FontSize="Small"
+            BackgroundColor="#04c101"
+            BorderColor="Green"
+            BorderWidth="5"
+            CornerRadius="10"
+            FontAttributes="Bold"
+            Clicked="AgregarPokemonBtn_Clicked"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="0,0,0,0"
+                />
+
+            <Button
+            Text="Editar"
+            Clicked="EditarPokemonBtn_Clicked"
+            TextColor="White"
+            FontSize="Small"
+            BackgroundColor="#FFE15D"
+            BorderColor="#FFBD33"
+            BorderWidth="5"
+            CornerRadius="10"
+            FontAttributes="Bold"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="10,0,10,0"
+        />
+            <Button
+            Text="Eliminar"
+            Clicked="EliminarPokemonBtn_Clicked"
+            TextColor="White"
+            FontSize="Small"
+            BackgroundColor="OrangeRed"
+            BorderColor="Red"
+            BorderWidth="5"
+            CornerRadius="15"
+            FontAttributes="Bold"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="0,0,0,0"
+        />
+
+        </Grid>
+
+        <ScrollView HeightRequest="500" BackgroundColor="#FFBD33">
+            <CollectionView x:Name="PeliculasCollectionView"
+      SelectionMode="Single" 
+      SelectedItem="{Binding PokemonSeleccionado}">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="*,2*" ColumnDefinitions="*,2*,2*" HeightRequest="100">
+                            <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="{Binding portada_url}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding nombre}" FontSize="Title" Margin="10,0,0,0"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="Genero:" FontAttributes="Bold" FontSize="Micro" Margin="10,20,0,0"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding genero}" FontSize="Micro" Margin="10,35,0,0"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Tipo:" FontAttributes="Bold" FontSize="Micro" Margin="0,7,0,0"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding tipo}" FontSize="Micro" Margin="0,20,0,0"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="Debilidades:" FontAttributes="Bold" FontSize="Micro" Margin="0,20,0,0"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding debilidad}" FontSize="Micro" Margin="0,35,0,0"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </VerticalStackLayout>
+
+</ContentPage>

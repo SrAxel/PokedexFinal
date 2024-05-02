@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPeliculas.PaginaInicio"
+             Title="PaginaInicio">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20">
+            <Label 
+            Text="AppPeliculas"
+            FontSize="32"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" />
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button
+                x:Name="PeliculasBtn"
+                Text="Peliculas"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="MostrarPeliculas"
+                HorizontalOptions="Center" />
+                <Button
+                x:Name="SeriesBtn"
+                Text="Series"
+                HorizontalOptions="Center" />
+                <Button
+                x:Name="DocumentalesBtn"
+                Text="Documentales"
+                HorizontalOptions="Center" />
+                <Button
+                x:Name="VolverBtn"
+                Text="Volver"
+                Clicked="CerrarLaVentana"
+                HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+            <Label
+            x:Name="ContenidoLbl"
+            Text=""
+            FontSize="18"
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

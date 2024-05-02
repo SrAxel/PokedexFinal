@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPeliculas.Views.IniciarSesion"
+             Title="IniciarSesion"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Orange">
+    
+    <ScrollView Margin="20,0,20,0">
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+            <Image Source="https://i.ibb.co/VtTfvjD/pngimg-com-pokemon-logo-PNG3.png"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Margin="0,0,0,25"
+            ></Image>
+            <Label 
+                FontSize="Title"
+                Text="Inicio de sesión a Pokedex"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontAttributes="Bold"/>
+
+            <Grid RowDefinitions="2*,2*,2*,*,*" ColumnDefinitions="*,*">
+                <Label Grid.Row="0" Grid.Column="0" 
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Center"
+               Margin="40,20" FontAttributes="Bold">Email:</Label>
+                <Entry Grid.Row="0" Grid.Column="1" 
+               x:Name="txtEmail"
+               Margin="0,10,0,10"></Entry>
+
+                <Label Grid.Row="1" Grid.Column="0" 
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Center"
+               Margin="40,20" FontAttributes="Bold">Contraseña:</Label>
+                <Entry Grid.Row="1" Grid.Column="1" 
+               x:Name="txtPassword"
+                IsPassword="True"
+               Margin="0,10,0,10"></Entry>
+                <CheckBox x:Name="chkRecordarContraseña"
+              Grid.Row="2" Grid.Column="0"
+              HorizontalOptions="End"
+              VerticalOptions="Center"></CheckBox>
+                <Label Grid.Row="2" Grid.Column="1"
+               VerticalOptions="Center"
+               >Recordar contraseña</Label>
+                <Button Text="Iniciar Sesión"
+            x:Name="btnIniciarSesion"
+            Grid.Row="3" Grid.Column="0"
+            Clicked="btnIniciarSesion_Clicked"
+            Grid.ColumnSpan="2"
+            Margin="0,10,0,10"
+            FontAttributes="Bold"
+            ></Button>
+
+                <Button Text="Registrarse"
+            x:Name="btnRegistrarse"
+            Grid.Row="4" Grid.Column="0"
+            Clicked="btnRegistrarse_Clicked"
+            Grid.ColumnSpan="2"
+            FontAttributes="Bold"
+            ></Button>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPeliculas.Views.EditarPelicula"
+             BackgroundColor="Orange">
+    
+    <ScrollView HorizontalOptions="CenterAndExpand">
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Label 
+        Text="EDITANDO POKEMON"
+        FontSize="Title"
+        FontAttributes="Bold"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+
+            <Label>Nombre:</Label>
+            <Entry x:Name="txtNombre"></Entry>
+
+            <Label>Genero:</Label>
+            <Entry x:Name="txtGenero"></Entry>
+
+            <Label>Tipo:</Label>
+            <Entry x:Name="txtTipo"></Entry>
+
+            <Label>URL de la Imagen:</Label>
+            <Entry x:Name="txtPortadaUrl"></Entry>
+
+            <Label>Debilidad:</Label>
+            <Editor x:Name="txtDebilidad"></Editor>
+            <HorizontalStackLayout Margin="0,25,0,0">
+                <Button x:Name="GuardarBtn" 
+                Text="Guardar"
+                Clicked="GuardarBtn_Clicked"
+                TextColor="White"
+                FontSize="Small"
+                BackgroundColor="#04c101"
+                BorderColor="Green"
+                BorderWidth="5"
+                HeightRequest="60"
+                WidthRequest="160"
+                Margin="0,0,15,0"
+
+        ></Button>
+                <Button x:Name="CancelarBtn" 
+                Text="Cancelar"
+                Clicked="CancelarBtn_Clicked"
+                TextColor="White"
+                FontSize="Small"
+                BackgroundColor="OrangeRed"
+                BorderColor="Red"
+                BorderWidth="5"
+                HeightRequest="60"
+                WidthRequest="160"
+                Margin="15,0,0,0"
+        ></Button>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

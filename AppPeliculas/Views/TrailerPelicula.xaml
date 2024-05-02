@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPeliculas.Views.TrailerPelicula"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="TrailerPelicula">
+    <ScrollView>
+        <VerticalStackLayout>
+            <toolkit:MediaElement HeightRequest="300" Source="https://www.youtube.com/watch?v=l_wZ2j1WoGk"
+                  ShouldShowPlaybackControls="True" ShouldAutoPlay="True" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

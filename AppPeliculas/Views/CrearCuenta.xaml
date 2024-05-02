@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPeliculas.Views.CrearCuenta"
+             Title="CrearCuenta"
+             BackgroundColor="Orange">
+    <ScrollView>
+        <VerticalStackLayout Margin="20">
+            <Label 
+     FontSize="Title"
+     Text="Creando nueva cuenta en la Pokedex"
+     VerticalOptions="Center" 
+     HorizontalOptions="Center" />
+            <Grid RowDefinitions="2*,2*,2*,*" ColumnDefinitions="*,*">
+                <Label Grid.Row="0" Grid.Column="0" 
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="Center"
+            Margin="10,20">Email:</Label>
+                <Entry Grid.Row="0" Grid.Column="1" 
+            x:Name="txtEmail"
+            Margin="10,20,100,20"></Entry>
+
+                <Label Grid.Row="1" Grid.Column="0" 
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="Center"
+            Margin="10,20">Contraseña:</Label>
+                <Entry Grid.Row="1" Grid.Column="1" 
+            x:Name="txtPassword"
+            Margin="10,20,100,20" IsPassword="True"></Entry>
+
+                <Label Grid.Row="2" Grid.Column="0" 
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="Center"
+            Margin="10,20">Verificar Contraseña:</Label>
+                <Entry Grid.Row="2" Grid.Column="1" 
+            x:Name="txtVerificarPassword"
+            Margin="10,20,100,20" IsPassword="True"></Entry>
+
+                <Button Text="Crear Cuenta"
+             x:Name="btnCrearCuenta"
+             Grid.Row="3" Grid.Column="0"
+             Clicked="btnCrearCuenta_Clicked"
+             Grid.ColumnSpan="2"
+             Margin="100,10"
+             ></Button>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
